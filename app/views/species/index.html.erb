@@ -3,7 +3,17 @@
 <ul>
   <% @species.each do |species|%>
     <li><a href="/species/<%= species.id %>"> <%= species.name + ": " + species.genus %></a></li>
-    <% end %>
+    <a href="/species/delete/<%= species.id %>" class="btn warning" data-method="delete" rel="nofollow"> <button>DELETE</button> </a>
+  <% end %>
 </ul>
 
 <a href = "/species/new">Add a New Species</a>
+
+<h2>View All Sightings By Date</h2>
+<form action="/sightings" method="get">
+  <label for="sightings_start_date">Start date</label>
+  <input id="sightings_start_date" name="sightings[start_date]" type="date">
+  <label for="sightings_end_date">End date</label>
+  <input id="sightings_end_date" name="sightings[end_date]" type="date">
+  <button>Run report</button>
+</form>

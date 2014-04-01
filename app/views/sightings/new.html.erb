@@ -1,0 +1,32 @@
+<h1>Enter the SIGHTING INFORMATION NOWWWWWWW!</h1>
+
+<% if @sighting.errors.any? %>
+  <h2> There was an error in your submission: </h2>
+  <ul>
+    <% @sighting.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<form action = "/sightings/new" method = "post">
+  <label for="sighting-date">Date:</label>
+  <input id="sighting-date" name = "sighting[start_date]" type="date">
+  <label for="sighting-end-date">End-dDte:</label>
+  <input id="sighting-end-date" name = "sighting[end_date]" type="date">
+  <label for="sighting-lat">Lat:</label>
+  <input id="sighting-lat" name = "sighting[lat]" type="text">
+  <label for="sighting-long">Long:</label>
+  <input id="sighting-long" name = "sighting[long]" type="text">
+  <input id="speices-id" name = "sighting[specie_id]" type="hidden" value="<%= @species.id %>">
+
+  <select name = "sighting[region_id]">
+    <option value="1">East</option>
+    <option value="2">West</option>
+    <option value="3">South</option>
+    <option value="4">North</option>
+  </select>
+
+  <button class="warning">button</button>
+</form>
+

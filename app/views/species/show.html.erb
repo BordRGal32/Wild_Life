@@ -2,5 +2,11 @@
 
 <p>Genus: <%= @specie.genus %></p>
 
-<a href="/species/edit/<%= @specie.id %>">EDIT</a></li>
-<a href="/species/delete/<%= @specie.id %>" data-confirm="really?" data-method="delete" rel="nofollow">DELETE</a>
+<% @specie.sightings.each do |sighting| %>
+  <li> - <%= sighting.description %> <a href="/sightings/delete/<%= sighting.id %>" class="btn warning" data-method="delete">Delete</a><a href="" class="btn warning">Edit</a> </li>
+<% end %>
+
+<p><a href ="/species">Go Back to Home Page</a></p>
+<p><a href="/species/edit/<%= @specie.id %>">Edit</a></li></p>
+<p><a href = "/species/<%= @specie.id %>/sightings/new">Add Sighting</a></p>
+

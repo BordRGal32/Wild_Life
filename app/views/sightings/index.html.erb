@@ -1,0 +1,10 @@
+<h1>Sightings</h1>
+
+<ul>
+  <% @sighting.each do |sighting| %>
+    <% specie = Species.find(sighting.specie_id) %>
+    <li> <%= "#{specie.name} #{sighting.region.name} #{sighting.lat} #{sighting.long}" %></li>
+  <%end%>
+</ul>
+
+<a href = "/species">HomePage</a>
