@@ -1,0 +1,6 @@
+<h1><% @specie.name %></h1>
+
+<p>Genus: <%= @specie.genus %></p>
+
+<a href="/species/edit/<%= @specie.id %>">EDIT</a></li>
+<a href="/species/delete/<%= @specie.id %>" data-confirm="really?" data-method="delete" rel="nofollow">DELETE</a>

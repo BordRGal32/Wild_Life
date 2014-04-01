@@ -1,0 +1,17 @@
+<blink><h1>nEw AnImAlZ!!!!1!</h1></blink>
+
+<% if @species.errors.any? %>
+  <h2> There was an error in your submission: </h2>
+  <ul>
+    <% @species.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+<form action="/species" method="post">
+  <label for="species-name">Name:</label>
+  <input id="species-name" name="species[name]" type="text">
+  <label for="species-genus">Genus:</label>
+  <input id="species-genus" name="species[genus]" type="text">
+  <button>Add Species</button>
+</form>
