@@ -1,0 +1,18 @@
+#species-div {
+  background-color: #ff0099;
+  position: relative;
+}
+
+#sightings-div {
+  position: relative;
+  width: 50%;
+}
+
+.header {
+  text-align: center;
+}
+
+#content {
+  width: 800px;
+  margin: 20px auto;
+}

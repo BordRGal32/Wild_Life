@@ -1,19 +1,34 @@
-<h1>WildLife</h1>
 
-<ul>
-  <% @species.each do |species|%>
-    <li><a href="/species/<%= species.id %>"> <%= species.name + ": " + species.genus %></a></li>
-    <a href="/species/delete/<%= species.id %>" class="btn warning" data-method="delete" rel="nofollow"> <button>DELETE</button> </a>
-  <% end %>
-</ul>
 
-<a href = "/species/new">Add a New Species</a>
+<div id="content">
+  <h1 class = "header">WildLife</h1>
 
-<h2>View All Sightings By Date</h2>
-<form action="/sightings" method="get">
-  <label for="sightings_start_date">Start date</label>
-  <input id="sightings_start_date" name="sightings[start_date]" type="date">
-  <label for="sightings_end_date">End date</label>
-  <input id="sightings_end_date" name="sightings[end_date]" type="date">
-  <button>Run report</button>
-</form>
+  <div id="species-div">
+<!--     <h2>Time to add a sighting!</h2>
+    <p>select species
+      <select>
+        <% @species.each do |species| %>
+        <option value="<%= species.name %>"><%= species.name %></option>
+        <% end %>
+      </select> -->
+    <ul>
+      <% @species.each do |species|%>
+        <li><a href="/species/<%= species.id %>"> <%= species.name + ": " + species.genus %></a></li>
+        <a href="/species/delete/<%= species.id %>" class="btn warning" data-method="delete" rel="nofollow"> <button>DELETE</button> </a>
+      <% end %>
+    </ul>
+
+    <a href = "/species/new">Add a New Species</a>
+  </div>
+
+  <div id="sightings-div">
+    <h2>View All Sightings By Date</h2>
+    <form action="/sightings" method="get">
+      <label for="sightings_start_date">Start date</label>
+      <input id="sightings_start_date" name="sightings[start_date]" type="date">
+      <label for="sightings_end_date">End date</label>
+      <input id="sightings_end_date" name="sightings[end_date]" type="date">
+      <button>Run report</button>
+    </form>
+  </div>
+</div>
